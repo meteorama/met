@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météorama - Accueil</title>
+    <!-- Polices modernes pour correspondre à l'application Tauri/React -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="rain"></div>
+        <div class="snow"></div>
+        <div class="floating-cloud" style="top: 20%; left: 10%;"></div>
+        <div class="floating-cloud" style="top: 30%; right: 15%; animation-delay: 2s;"></div>
+        <div class="floating-cloud" style="top: 70%; left: 20%; animation-delay: 4s;"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- En-tête avec barre de navigation améliorée -->
+        <header>
+            <div class="header-content">
+                <div class="logo-title-container">
+                    <div class="logo-container">
+                        <img src="icons/logo_meteorama.png" alt="Météorama" class="header-logo">
+                    </div>
+                    <div class="site-title-container">
+                        <a href="index.html"><h1>Meteorama</h1></a>
+                    </div>
+                </div>
+                <nav class="nav-links" id="navLinks">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="pages/equipe.html">Team</a>
+                    <a href="pages/chronologie.html">Chronology</a>
+                </nav>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="active">Home</a>
+                <a href="pages/equipe.html">Team</a>
+                <a href="pages/chronologie.html">Chronology</a>
+            </div>
+        </header>
+
+        <!-- Contenu principal épuré -->
+        <main>
+            <!-- Section Hero - Mise à jour -->
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    <h2 class="hero-title reveal reveal-delay-1">Weather Forecasting Reinvented</h2>
+                    <p class="hero-subtitle reveal reveal-delay-2">
+                        A Rust-based application providing easy access to weather forecasts using our own custom
+                        statistical model, combining the best of web technologies with Rust's robustness.
+                    </p>
+                    <div class="hero-btn-group reveal reveal-delay-3">
+                        <button class="hero-btn" onclick="location.href='https://github.com/sahamone/meteorama'">GitHub Repo</button>
+                        <button class="hero-btn download-btn" onclick="location.href='https://github.com/sahamone/meteorama/releases'">Download App</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Fonctionnalités - Mise à jour-->
+            <section id="features" class="section">
+                <h2 class="section-title reveal">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item reveal reveal-delay-1">
+                        <img src="icons/temps.png" class="feature-icon">
+                        <h3>Real-time Weather Data</h3>
+                        <p>Access current weather conditions anywhere in France with data from OpenWeatherMap</p>
+                    </div>
+                    <div class="feature-item reveal reveal-delay-2">
+                        <img src="icons/emplacement.png" class="feature-icon">
+                        <h3>Advanced Forecasting</h3>
+                        <p>Unique statistical forecasting model for quality short- and medium-term predictions</p>
+                    </div>
+                    <div class="feature-item reveal reveal-delay-3">
+                        <img src="icons/engrenage.png" class="feature-icon">
+                        <h3>Modern Architecture</h3>
+                        <p>Built with Tauri and React/Vite, combining web technologies with Rust's performance</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack Section - Mise à jour -->
+            <section id="tech-stack" class="section">
+                <h2 class="section-title reveal">Technology Stack</h2>
+                <div class="stack-container">
+                    <div class="stack-column reveal reveal-delay-1">
+                        <h3>Frontend</h3>
+                        <ul class="tech-list">
+                            <li>React & TypeScript</li>
+                            <li>TailwindCSS & DaisyUI</li>
+                            <li>OpenLayers for dynamic maps</li>
+                            <li>Lucide icons</li>
+                            <li>Vite build tool</li>
+                        </ul>
+                    </div>
+                    <div class="stack-column reveal reveal-delay-2">
+                        <h3>Backend</h3>
+                        <ul class="tech-list">
+                            <li>Rust with Tauri framework</li>
+                            <li>Moka for cache management</li>
+                            <li>Tokio for asynchronous requests</li>
+                            <li>Reqwest for API requests</li>
+                            <li>Serde for JSON handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- APIs Section - Mise à jour -->
+            <section id="apis" class="section">
+                <h2 class="section-title reveal">Data Sources</h2>
+                <div class="apis-container">
+                    <div class="api-item reveal reveal-delay-1">
+                        <h3>OpenWeatherMap API</h3>
+                        <p>Provides real-time weather data and forecasts</p>
+                    </div>
+                    <div class="api-item reveal reveal-delay-2">
+                        <h3>Météo France APIs</h3>
+                        <p>Used for vigilance maps and main layers of dynamic maps</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Météorama. All rights reserved.</p>
+        <div class="footer-authors">
+            <p>Created by: Moro Hugo, Sabra Roy, Thomé Aubin, Vaudey Sacha</p>
+        </div>
+    </footer>
+
+    <button id="sound-toggle" aria-label="Activer le son">🔊</button>
+    <button id="weather-toggle" aria-label="Activer/Désactiver la météo">🌤️</button>
+
+    <script>
+        // Ajout du comportement dynamique du header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
